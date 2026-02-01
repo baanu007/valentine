@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>💕 A Special Question 💕</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
         }
 
         body {
@@ -19,7 +24,6 @@
             justify-content: center;
             align-items: center;
             font-family: 'Poppins', sans-serif;
-            overflow: hidden;
             position: relative;
         }
 
@@ -86,14 +90,9 @@
             }
             10% {
                 opacity: 0.7;
-                transform: translateY(90vh) rotate(20deg) scale(0.8);
-            }
-            50% {
-                transform: translateY(50vh) rotate(-20deg) scale(1);
             }
             90% {
                 opacity: 0.7;
-                transform: translateY(10vh) rotate(20deg) scale(0.8);
             }
             100% {
                 transform: translateY(-100px) rotate(360deg) scale(0.5);
@@ -115,21 +114,11 @@
                 transform: translateX(-100px) translateY(50vh) rotate(0deg);
                 opacity: 0;
             }
-            10% {
-                opacity: 1;
-            }
-            25% {
-                transform: translateX(25vw) translateY(30vh) rotate(10deg);
-            }
-            50% {
-                transform: translateX(50vw) translateY(60vh) rotate(-10deg);
-            }
-            75% {
-                transform: translateX(75vw) translateY(25vh) rotate(10deg);
-            }
-            90% {
-                opacity: 1;
-            }
+            10% { opacity: 1; }
+            25% { transform: translateX(25vw) translateY(30vh) rotate(10deg); }
+            50% { transform: translateX(50vw) translateY(60vh) rotate(-10deg); }
+            75% { transform: translateX(75vw) translateY(25vh) rotate(10deg); }
+            90% { opacity: 1; }
             100% {
                 transform: translateX(110vw) translateY(45vh) rotate(0deg);
                 opacity: 0;
@@ -146,51 +135,12 @@
                 opacity: 0;
             }
             10% { opacity: 1; }
-            25% {
-                transform: translateX(75vw) translateY(70vh) rotate(170deg);
-            }
-            50% {
-                transform: translateX(50vw) translateY(20vh) rotate(190deg);
-            }
-            75% {
-                transform: translateX(25vw) translateY(60vh) rotate(170deg);
-            }
+            25% { transform: translateX(75vw) translateY(70vh) rotate(170deg); }
+            50% { transform: translateX(50vw) translateY(20vh) rotate(190deg); }
+            75% { transform: translateX(25vw) translateY(60vh) rotate(170deg); }
             90% { opacity: 1; }
             100% {
                 transform: translateX(-100px) translateY(40vh) rotate(180deg);
-                opacity: 0;
-            }
-        }
-
-        .butterfly.flutter {
-            animation: flutter 0.3s ease-in-out infinite alternate;
-        }
-
-        @keyframes flutter {
-            from { transform: scaleX(1); }
-            to { transform: scaleX(-1); }
-        }
-
-        /* Rose Petals */
-        .petal {
-            position: fixed;
-            width: 15px;
-            height: 15px;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
-            border-radius: 50% 0 50% 50%;
-            animation: fallPetal linear infinite;
-            opacity: 0.8;
-            z-index: 1;
-        }
-
-        @keyframes fallPetal {
-            0% {
-                transform: translateY(-50px) rotate(0deg) translateX(0);
-                opacity: 0;
-            }
-            10% { opacity: 0.8; }
-            100% {
-                transform: translateY(110vh) rotate(360deg) translateX(100px);
                 opacity: 0;
             }
         }
@@ -214,37 +164,18 @@
 
         .container {
             text-align: center;
-            padding: 60px;
+            padding: 30px 40px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 30px;
             box-shadow: 
                 0 20px 60px rgba(255, 105, 135, 0.3),
-                0 0 100px rgba(255, 182, 193, 0.4),
-                inset 0 0 50px rgba(255, 228, 225, 0.3);
-            max-width: 550px;
+                0 0 100px rgba(255, 182, 193, 0.4);
+            max-width: 450px;
+            width: 90%;
             position: relative;
             z-index: 10;
             animation: pop-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border: 2px solid rgba(255, 182, 193, 0.5);
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(45deg, #ff9a9e, #fecfef, #ff9a9e, #fecfef);
-            border-radius: 32px;
-            z-index: -1;
-            background-size: 300% 300%;
-            animation: borderGlow 4s ease infinite;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            border: 3px solid rgba(255, 182, 193, 0.6);
         }
 
         @keyframes pop-in {
@@ -262,7 +193,7 @@
         }
 
         .heart-icon {
-            font-size: 90px;
+            font-size: 70px;
             animation: heartbeat 1.2s ease-in-out infinite;
             display: inline-block;
             filter: drop-shadow(0 0 20px rgba(255, 105, 135, 0.6));
@@ -277,15 +208,14 @@
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             background: linear-gradient(135deg, #e84a5f, #ff6b6b, #e84a5f);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin: 25px 0;
+            margin: 15px 0;
             animation: shimmer 3s ease infinite;
-            text-shadow: none;
         }
 
         @keyframes shimmer {
@@ -294,93 +224,64 @@
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #888;
-            margin-bottom: 40px;
-            animation: fadeIn 1s ease 0.5s both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin-bottom: 20px;
         }
 
         .love-poem {
             font-style: italic;
             color: #e84a5f;
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-            padding: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            padding: 12px;
             background: rgba(255, 182, 193, 0.2);
-            border-radius: 15px;
-            border-left: 4px solid #e84a5f;
-            animation: fadeIn 1s ease 0.8s both;
+            border-radius: 12px;
+            border-left: 3px solid #e84a5f;
         }
 
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
-            animation: fadeIn 1s ease 1s both;
         }
 
         .btn {
-            padding: 18px 55px;
-            font-size: 1.4rem;
+            padding: 15px 45px;
+            font-size: 1.2rem;
             font-weight: 600;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
         }
 
         .btn-yes {
             background: linear-gradient(135deg, #e84a5f, #ff6b6b, #ff8e8e);
-            background-size: 200% 200%;
             color: white;
-            box-shadow: 
-                0 8px 25px rgba(232, 74, 95, 0.4),
-                0 0 40px rgba(232, 74, 95, 0.2);
+            box-shadow: 0 8px 25px rgba(232, 74, 95, 0.4);
             animation: pulseGlow 2s ease-in-out infinite;
         }
 
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 8px 25px rgba(232, 74, 95, 0.4), 0 0 40px rgba(232, 74, 95, 0.2); }
-            50% { box-shadow: 0 8px 35px rgba(232, 74, 95, 0.6), 0 0 60px rgba(232, 74, 95, 0.4); }
+            0%, 100% { box-shadow: 0 8px 25px rgba(232, 74, 95, 0.4); }
+            50% { box-shadow: 0 8px 35px rgba(232, 74, 95, 0.6), 0 0 60px rgba(232, 74, 95, 0.3); }
         }
 
         .btn-yes:hover {
-            transform: scale(1.15) translateY(-3px);
-            box-shadow: 
-                0 12px 40px rgba(232, 74, 95, 0.5),
-                0 0 80px rgba(232, 74, 95, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(232, 74, 95, 0.5);
         }
 
         .btn-no {
             background: linear-gradient(135deg, #b8b8b8, #999);
             color: white;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            position: absolute;
-            transition: all 0.15s ease;
+            position: fixed;
+            z-index: 100;
+            transition: none !important;
         }
 
         .btn-no:hover {
@@ -399,45 +300,39 @@
         }
 
         .success-screen h1 {
-            font-size: 3.5rem;
-            margin: 20px 0;
+            font-size: 3rem;
+            margin: 15px 0;
         }
 
         .success-screen p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: #e84a5f;
         }
 
         .celebration {
-            font-size: 70px;
-            animation: bounce 0.5s ease infinite alternate, spin 4s linear infinite;
+            font-size: 60px;
+            animation: bounce 0.5s ease infinite alternate;
             display: inline-block;
         }
 
         @keyframes bounce {
-            from { transform: translateY(0) rotate(0deg); }
-            to { transform: translateY(-25px) rotate(5deg); }
-        }
-
-        @keyframes spin {
-            from { filter: hue-rotate(0deg); }
-            to { filter: hue-rotate(360deg); }
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
         }
 
         .love-message {
-            margin-top: 30px;
-            padding: 25px;
+            margin-top: 20px;
+            padding: 20px;
             background: linear-gradient(135deg, #ffecd2, #fcb69f);
-            border-radius: 20px;
-            font-size: 1.2rem;
+            border-radius: 15px;
+            font-size: 1rem;
             color: #333;
-            box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.5);
         }
 
         .love-message .big-heart {
-            font-size: 50px;
+            font-size: 40px;
             display: block;
-            margin: 20px 0;
+            margin: 10px 0;
             animation: heartbeat 1s ease infinite;
         }
 
@@ -481,40 +376,37 @@
             display: none;
         }
 
-        /* Decorative corners */
+        /* Corner decorations */
         .corner-decoration {
             position: absolute;
-            font-size: 30px;
-            opacity: 0.6;
+            font-size: 24px;
+            opacity: 0.7;
         }
-        .corner-decoration.top-left { top: 15px; left: 15px; }
-        .corner-decoration.top-right { top: 15px; right: 15px; }
-        .corner-decoration.bottom-left { bottom: 15px; left: 15px; }
-        .corner-decoration.bottom-right { bottom: 15px; right: 15px; }
+        .corner-decoration.top-left { top: 10px; left: 10px; }
+        .corner-decoration.top-right { top: 10px; right: 10px; }
+        .corner-decoration.bottom-left { bottom: 10px; left: 10px; }
+        .corner-decoration.bottom-right { bottom: 10px; right: 10px; }
 
-        /* Fireflies */
-        .firefly {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: #ffec8b;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #ffec8b, 0 0 20px #ffec8b, 0 0 30px #ffec8b;
-            animation: firefly 8s ease-in-out infinite;
-            z-index: 2;
-        }
-
-        @keyframes firefly {
-            0%, 100% { 
-                opacity: 0;
-                transform: translateX(0) translateY(0);
+        /* Mobile adjustments */
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 20px;
+                max-width: 95%;
             }
-            10% { opacity: 1; }
-            50% { 
-                opacity: 0.8;
-                transform: translateX(100px) translateY(-50px);
+            h1 {
+                font-size: 2rem;
             }
-            90% { opacity: 1; }
+            .heart-icon {
+                font-size: 50px;
+            }
+            .love-poem {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+            .btn {
+                padding: 12px 35px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -522,10 +414,8 @@
     <div class="hearts-bg" id="heartsBg"></div>
     <div class="confetti" id="confetti"></div>
     <div id="butterflies"></div>
-    <div id="petals"></div>
     <div id="sparkles"></div>
     <div id="orbs"></div>
-    <div id="fireflies"></div>
 
     <div class="container">
         <span class="corner-decoration top-left">🌸</span>
@@ -544,25 +434,26 @@
             </div>
             <div class="buttons">
                 <button class="btn btn-yes" onclick="sayYes()">Yes! 💕</button>
-                <button class="btn btn-no" id="noBtn">No</button>
             </div>
         </div>
 
         <!-- Success Screen -->
         <div class="success-screen" id="successScreen">
-            <div class="celebration">💖</div>
+            <div class="celebration">🎉💖🎉</div>
             <h1>Yaaay!</h1>
-            <p>You just made me the happiest person alive! 🥹</p>
+            <p>You just made me the happiest person! 🥹</p>
             <div class="love-message">
                 <span class="big-heart">💕</span>
                 <p>I can't wait to spend this Valentine's Day with you!</p>
-                <p style="margin-top: 15px; font-size: 1rem; color: #666;">
-                    You're my favorite person in the entire universe 🌌<br>
-                    Forever & Always 💍
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                    You're my favorite person 🌍<br>Forever & Always 💍
                 </p>
             </div>
         </div>
     </div>
+
+    <!-- No button outside container so it can move freely -->
+    <button class="btn btn-no" id="noBtn">No</button>
 
     <script>
         // Create floating hearts
@@ -570,14 +461,14 @@
             const container = document.getElementById('heartsBg');
             const hearts = ['💕', '💖', '💗', '💓', '💘', '💝', '❤️', '🩷', '💜', '🤍'];
             
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 20; i++) {
                 const heart = document.createElement('div');
                 heart.className = 'floating-heart';
                 heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
                 heart.style.left = Math.random() * 100 + '%';
                 heart.style.animationDuration = (Math.random() * 15 + 10) + 's';
                 heart.style.animationDelay = (Math.random() * 15) + 's';
-                heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
                 container.appendChild(heart);
             }
         }
@@ -585,35 +476,17 @@
         // Create butterflies
         function createButterflies() {
             const container = document.getElementById('butterflies');
-            const butterflies = ['🦋', '🦋', '🦋'];
             const colors = ['', 'hue-rotate(30deg)', 'hue-rotate(60deg)', 'hue-rotate(-30deg)'];
             
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 5; i++) {
                 const butterfly = document.createElement('div');
                 butterfly.className = 'butterfly' + (i % 2 === 0 ? '' : ' path2');
-                butterfly.textContent = butterflies[i % butterflies.length];
-                butterfly.style.animationDuration = (Math.random() * 15 + 20) + 's';
-                butterfly.style.animationDelay = (Math.random() * 10) + 's';
+                butterfly.textContent = '🦋';
+                butterfly.style.animationDuration = (Math.random() * 12 + 15) + 's';
+                butterfly.style.animationDelay = (Math.random() * 8) + 's';
                 butterfly.style.filter = `drop-shadow(0 0 10px rgba(255, 182, 193, 0.8)) ${colors[i % colors.length]}`;
                 butterfly.style.fontSize = (Math.random() * 15 + 25) + 'px';
                 container.appendChild(butterfly);
-            }
-        }
-
-        // Create rose petals
-        function createPetals() {
-            const container = document.getElementById('petals');
-            
-            for (let i = 0; i < 15; i++) {
-                const petal = document.createElement('div');
-                petal.className = 'petal';
-                petal.style.left = Math.random() * 100 + '%';
-                petal.style.animationDuration = (Math.random() * 8 + 8) + 's';
-                petal.style.animationDelay = (Math.random() * 10) + 's';
-                petal.style.transform = `rotate(${Math.random() * 360}deg)`;
-                const hue = Math.random() * 30 - 15;
-                petal.style.filter = `hue-rotate(${hue}deg)`;
-                container.appendChild(petal);
             }
         }
 
@@ -621,7 +494,7 @@
         function createSparkles() {
             const container = document.getElementById('sparkles');
             
-            for (let i = 0; i < 40; i++) {
+            for (let i = 0; i < 30; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
                 sparkle.style.left = Math.random() * 100 + '%';
@@ -636,10 +509,10 @@
         function createOrbs() {
             const container = document.getElementById('orbs');
             
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < 6; i++) {
                 const orb = document.createElement('div');
                 orb.className = 'orb';
-                const size = Math.random() * 100 + 50;
+                const size = Math.random() * 80 + 40;
                 orb.style.width = size + 'px';
                 orb.style.height = size + 'px';
                 orb.style.left = Math.random() * 100 + '%';
@@ -650,43 +523,38 @@
             }
         }
 
-        // Create fireflies
-        function createFireflies() {
-            const container = document.getElementById('fireflies');
+        // Position the No button initially
+        const noBtn = document.getElementById('noBtn');
+        
+        function positionNoButtonInitially() {
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
             
-            for (let i = 0; i < 12; i++) {
-                const firefly = document.createElement('div');
-                firefly.className = 'firefly';
-                firefly.style.left = Math.random() * 100 + '%';
-                firefly.style.top = Math.random() * 100 + '%';
-                firefly.style.animationDuration = (Math.random() * 6 + 6) + 's';
-                firefly.style.animationDelay = (Math.random() * 8) + 's';
-                container.appendChild(firefly);
-            }
+            // Position it next to the Yes button area
+            noBtn.style.left = (containerRect.left + containerRect.width/2 + 60) + 'px';
+            noBtn.style.top = (containerRect.bottom - 80) + 'px';
         }
 
         // Make the No button run away
-        const noBtn = document.getElementById('noBtn');
-        
-        function moveButton() {
+        function moveButton(e) {
+            e.preventDefault();
             const btnRect = noBtn.getBoundingClientRect();
             const maxX = window.innerWidth - btnRect.width - 20;
             const maxY = window.innerHeight - btnRect.height - 20;
             
-            let newX = Math.random() * maxX;
-            let newY = Math.random() * maxY;
+            let newX, newY;
+            let attempts = 0;
             
-            const currentX = btnRect.left;
-            const currentY = btnRect.top;
+            do {
+                newX = Math.random() * maxX;
+                newY = Math.random() * maxY;
+                attempts++;
+            } while (
+                attempts < 10 && 
+                (Math.abs(newX - btnRect.left) < 150 || Math.abs(newY - btnRect.top) < 100)
+            );
             
-            if (Math.abs(newX - currentX) < 150) {
-                newX = newX < maxX / 2 ? newX + 250 : newX - 250;
-            }
-            if (Math.abs(newY - currentY) < 100) {
-                newY = newY < maxY / 2 ? newY + 150 : newY - 150;
-            }
-            
-            noBtn.style.position = 'fixed';
             noBtn.style.left = Math.max(20, Math.min(newX, maxX)) + 'px';
             noBtn.style.top = Math.max(20, Math.min(newY, maxY)) + 'px';
         }
@@ -699,6 +567,7 @@
         function sayYes() {
             document.getElementById('questionScreen').classList.add('hide');
             document.getElementById('successScreen').classList.add('show');
+            noBtn.style.display = 'none';
             createConfetti();
             createMoreButterflies();
         }
@@ -708,15 +577,15 @@
             const confettiContainer = document.getElementById('confetti');
             confettiContainer.classList.add('show');
             
-            const shapes = ['❤️', '💕', '✨', '🌟', '💖', '🎉', '💗', '🦋', '🌸', '💐', '🥰', '😍'];
+            const shapes = ['❤️', '💕', '✨', '🌟', '💖', '🎉', '💗', '🦋', '🌸', '💐', '🥰'];
             
-            for (let i = 0; i < 150; i++) {
+            for (let i = 0; i < 100; i++) {
                 setTimeout(() => {
                     const piece = document.createElement('div');
                     piece.className = 'confetti-piece';
                     piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
                     piece.style.left = Math.random() * 100 + '%';
-                    piece.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                    piece.style.fontSize = (Math.random() * 20 + 15) + 'px';
                     piece.style.animationDuration = (Math.random() * 3 + 2) + 's';
                     confettiContainer.appendChild(piece);
                     
@@ -728,13 +597,13 @@
         // Add more butterflies on success
         function createMoreButterflies() {
             const container = document.getElementById('butterflies');
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 8; i++) {
                 setTimeout(() => {
                     const butterfly = document.createElement('div');
                     butterfly.className = 'butterfly' + (Math.random() > 0.5 ? '' : ' path2');
                     butterfly.textContent = '🦋';
-                    butterfly.style.animationDuration = (Math.random() * 10 + 15) + 's';
-                    butterfly.style.fontSize = (Math.random() * 20 + 30) + 'px';
+                    butterfly.style.animationDuration = (Math.random() * 10 + 12) + 's';
+                    butterfly.style.fontSize = (Math.random() * 20 + 25) + 'px';
                     butterfly.style.filter = `drop-shadow(0 0 15px rgba(255, 182, 193, 1)) hue-rotate(${Math.random() * 60}deg)`;
                     container.appendChild(butterfly);
                 }, i * 300);
@@ -744,10 +613,12 @@
         // Initialize
         createFloatingHearts();
         createButterflies();
-        createPetals();
         createSparkles();
         createOrbs();
-        createFireflies();
+        
+        // Position No button after page loads
+        window.addEventListener('load', positionNoButtonInitially);
+        window.addEventListener('resize', positionNoButtonInitially);
     </script>
 </body>
 </html>
